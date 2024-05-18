@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>360-Degree Panorama Image Introduction</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+
+  <div class="navbar-container fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  
+        <a class="navbar-brand" href="#">
+          <img src="img/logo.png" alt="Logo Image" class="logo">
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link"  style="padding-right: 50px;
+              padding-left: 50px;" id="home-link" href="#">    Home    <span class="sr-only">(current)</span></a>
+
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="padding-right: 40px;
+              padding-left: 40px;" id="about-link" href="#map-container">Map View</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="padding-right: 40px;
+              padding-left: 40px;" id="services-link" href="#">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="padding-right: 40px;
+              padding-left: 40px;" id="contact-link" href="#list">Description</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  </div>
+  
+<div class="container mt-4">
+  <h2 class="text-center">360 degree View of Communication Towers</h2>
+
+  <!-- intro_para -->
+  <div class="intro-paragraph">
+    <p>
+      Welcome to our website showcasing 360° images of communication towers captured from unique perspectives. 
+      Our collection offers a comprehensive view of communication towers, allowing viewers to explore their intricate structures and surroundings in immersive detail.
+    </p>
+    </div>
+
+
+    
+  <!-- Drone _Container -->
+  
+  <div class="drone_container">
+      <div class="drone_content">
+        <h4>Capturing Method:</h4>
+        <p>
+          Our 360° images are captured using state-of-the-art drone technology. 
+          Drones equipped with high-resolution cameras are deployed to capture multiple continuous images from various angles around the communication towers. 
+          These images are meticulously stitched together using advanced image processing techniques to create seamless panoramic views.
+        </p>
+      </div>
+      <div class="drone_images">
+        <img src="img\4.jpg" alt="Image 3">
+      </div>
+    </div>
+
+
+    <!-- View_Experience -->
+
+    <div class="container_view">
+      <div class="images_view">
+        <img src="img/view.jpg" alt="Panoramic Image">
+      </div>
+      <div class="content_view">
+        <h4>Immersive Viewing Experience:</h4>
+        <p>
+          Through our panoramic technology, visitors to our website can enjoy an immersive viewing experience.
+          They can virtually navigate around the communication towers, gaining insights into their architecture and the landscapes they inhabit. Additionally,
+          our panoramic views allow for interactive exploration, enabling users to zoom in and out to examine specific details.
+        </p>
+      </div>
+    </div>
+    
+
+
+    <!-- Network_Container -->
+
+    <div class="container_network">
+      <div class="content_network">
+        <h4>Analyzing Network Coverage:</h4>
+        <p>
+          One of the unique features of our 360° images is the ability to analyze network coverage.
+           By leveraging the panoramic views, users can assess the distance between communication towers and surrounding infrastructure. 
+           This analysis aids in optimizing network coverage and identifying areas for improvement.
+        </p>
+      </div>
+      <div class="images_network">
+        <img src="img\network.jpg" alt="Network Coverage Image">
+      </div>
+    </div>  
+</div>
+</div>
+
+
+<!-- Map_Container -->
+<div id="map-container">
+  <div class="map-view-contents">
+    <h3>Map View</h3>
+    <div class="map-intro-paragraph">
+      <p>
+        Map View plays a crucial role in enhancing the user experience and understanding of our 360-degree images. Here's why it's essential:
+      </p>
+    </div>
+  </div>
+  
+  <div class="flex-container">
+    <div id="mapid"></div>
+    <div id="list">
+      <h4>List of Images</h4>
+      <table>
+        <tr id="france-row">
+          <td><a href="#france-description" onclick="showImageDescription('france')">France - Tower(1)</a></td>
+        </tr>
+          <tr id="uk-row">
+              <td>United Kingdom-Tower(1)</td>
+          </tr>
+          <tr id="">
+            <td>Germany-Tower(1)</td>
+        </tr>
+        <tr id="">
+          <td>Spain-Tower(1)</td>
+      </tr>
+      <tr id="">
+        <td>Netherland-Tower(1)</td>
+    </tr>
+      </table>
+    </div>
+  </div>
+</div> 
+
+
+<!-- Image Description -->
+  <div id="france-description" class="image-description">
+    <h3>Image Description</h3>
+    <ul>
+      <li><strong>France Tower</strong></li>
+    </ul>
+    <div class="images_network">
+      <img src="Panaromic_image.jpg" alt="Network Coverage Image">
+    </div>
+    <div class="image-caption">
+      <p style="text-align: center;"><strong>Flat image(Panoramic) of France Tower</strong></p>
+    </div>
+    <p>
+      The communication tower situated in France, nestled at coordinates 50°00'45.2"N latitude and 1°29'56.2"E longitude, stands as a beacon of technological prowess and connectivity in the landscape. Rising against the horizon, it dominates the skyline with its intricate lattice of steel, a testament to human ingenuity in facilitating global communication.
+
+      As the sun casts its golden hues upon the tower, its metallic facade gleams, reflecting the vibrant hues of dawn or dusk, depending on the time of observation. Silhouetted against the azure canvas of the sky, the tower embodies both strength and elegance, a modern marvel harmonizing with its natural surroundings.
+
+      The tower's design is a symphony of functionality and aesthetics, meticulously engineered to withstand the elements while exuding architectural grace. Antennas and satellite dishes adorn its structure, poised like sentinels, facilitating the transmission and reception of signals that traverse continents and oceans.
+
+      Surrounding the tower, the landscape unfolds, offering a tableau of diverse terrain and human activity. Rolling hills and verdant valleys stretch into the distance, punctuated by clusters of trees and quaint villages. In the distance, the spires of distant buildings hint at bustling urban centers, where the fruits of modern communication technology are embraced and utilized.
+
+      Closer inspection reveals the intricate details of the tower's construction, each rivet and beam a testament to meticulous engineering and craftsmanship. Cables and wires crisscross the structure, connecting it to the vast network of telecommunications infrastructure that spans the globe.
+    </p>
+    
+  </div>
+  <!-- Footer -->
+
+
+
+<footer >
+  <div class="copyright">
+    &copy; 2024 UNOM. All Rights Reserved. | 
+    <a style="color: white;"href="privacy-policy.html">Privacy Policy</a> | 
+    <a style="color: white;" href="terms-of-service.html">Terms of Service</a>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="leaflet.js"></script>
+</body>
+</html>
