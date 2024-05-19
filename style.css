@@ -76,6 +76,11 @@
   color: #efefef; 
 }
 
+.nav-link.active {
+  font-weight: bold;
+  color: #007bff; /* or any other style to indicate active link */
+}
+
 
 
 
@@ -199,6 +204,16 @@
 @media (max-width: 550px) {
   .drone_content, .drone_images {
     flex: 1 1 100%;
+    font-size: 14px;
+  }
+  .drone_content {
+    font-size: 14px;
+  }
+  h4 {
+    font-size: 24px;
+  }
+  .drone_images img{
+    height:25vh;
   }
 }
 
@@ -224,6 +239,7 @@
   padding: 3px;
   text-align: center;
   order: 1;
+  padding-right: 100px;
 }
 
 .images_view img {
@@ -235,6 +251,17 @@
   .content_view, .images_view {
     flex: 1 1 100%;
     order: 0; 
+    padding-right: 0px;
+    
+  }
+  .content_view {
+    font-size: 14px;
+  }
+  h4 {
+    font-size: 24px;
+  }
+  .images_view img{
+    height:25vh;
   }
 }
 
@@ -283,6 +310,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  
+  
+}
+@media (max-width: 550px) {
+  .images_network img{
+    height:25vh;
+  }
+  .content_network {
+    font-size: 14px;
+  }
+  h4 {
+    font-size: 24px;
   }
 }
 
@@ -428,7 +469,7 @@ footer{
 .footer {
   background-color: black; 
   color: white; 
-} */
+}
 
 
 

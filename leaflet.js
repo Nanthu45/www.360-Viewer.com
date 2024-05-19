@@ -35,6 +35,33 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+document.addEventListener("DOMContentLoaded", function() {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
+  
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5 // Adjust this value as needed
+    };
+  
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const navLink = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => link.classList.remove("active"));
+          navLink.classList.add("active");
+        }
+      });
+    }, observerOptions);
+  
+    sections.forEach(section => observer.observe(section));
+  });
+  
+
+
+
+
 
                                                                         // Map_View
 var map = L.map('mapid').setView([50.0126, 1.4989], 6); 
