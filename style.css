@@ -3,13 +3,28 @@
 /* Logo */
 .logo {
   height: 60px;
-  padding-left: 210px; /* Default padding for larger screens */
+  padding-left: 210px; 
+}
 
-  /* Responsive styles for mobile */
-  @media (max-width: 767px) {
-    padding-left: 0; /* Set padding to 0 for mobile screens */
+@media (max-width: 767px){
+  .logo{
+    padding-left: 0; 
+  }
+} 
+
+@media (max-width: 576px) {
+  .logo{
+    padding-left: 0; 
   }
 }
+
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .logo{
+    padding-left: 0; 
+  }
+}
+
 
 
 
@@ -339,44 +354,91 @@
   padding-top: 90px;
   
 }
+
+
+
+
 .map-view-contents {
   margin-bottom: 20px; 
-  
 }
 
 .flex-container {
   display: flex;
-  padding: 10px;
+  flex-direction: column; /* Stack elements vertically */
+  padding: 20px;
 }
 
 #mapid {
-  flex: 1 1 75%;
-  height: 500px;
+  flex: 1 1 auto; /* Let the map container grow to occupy available space */
+  height: 45vh; /* Set initial height for the map */
+  margin-bottom: 20px; /* Add margin to separate map and list */
   padding: 3px;
-  height: 45vh;  
 }
 
 #list {
-  flex: 1 1 25%;
-  margin-left: 20px;
+  flex: 1 1 auto; /* Let the list container grow to occupy available space */
   padding: 3px;
+  height: 100%;
+  overflow-y: auto; /* Enable vertical scrolling */
 }
 
 table {
   border-collapse: collapse;
   width: 100%;
-  
 }
+
 th, td {
   padding: 8px;
   text-align: left;
   border-bottom: 3px solid #007bff; 
-
 }
+
 tr:hover {
-  background-color:#007bff;
+  background-color: #007bff;
   cursor: pointer;
 }
+
+.leaflet-popup-content-wrapper {
+  max-width: 300px;
+}
+
+.leaflet-popup-content img {
+  width: 100%;
+  height: auto;
+}
+
+.leaflet-popup-content a {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.leaflet-popup-content a:hover {
+  text-decoration: underline;
+}
+
+/* Additional responsive styling */
+@media (min-width: 600px) {
+  .flex-container {
+    flex-direction: row; /* Display elements side by side on larger screens */
+  }
+
+  #mapid {
+    order: 1; /* Display map first */
+    width: 70%; /* Map takes 70% width */
+  }
+
+  #list {
+    order: 2; /* Display list second */
+    width: 30%; /* List takes 30% width */
+  }
+}
+
+
+
+
 
 
 
@@ -384,9 +446,7 @@ tr:hover {
 
                           /* Image Description */
 
-.image-description {
-  display: none;
-}
+
 .image-description{
   max-width: 1100px; 
   width: 100%; 

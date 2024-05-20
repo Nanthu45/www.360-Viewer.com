@@ -3,11 +3,9 @@ var navLinks = document.querySelectorAll('.nav-link');
 
 navLinks.forEach(function(link) {
     link.addEventListener('click', function() {
-        // Close the navbar by finding the navbar-toggler button and triggering a click event on it
         var navbarToggler = document.querySelector('.navbar-toggler');
         navbarToggler.click();
 
-        // Remove 'active' class from all links and add it to the clicked link
         navLinks.forEach(function(link) {
             link.classList.remove('active');
         });
@@ -42,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const observerOptions = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.5 // Adjust this value as needed
+      threshold: 0.5 
     };
   
     const observer = new IntersectionObserver(entries => {
@@ -64,41 +62,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
                                                                         // Map_View
-var map = L.map('mapid').setView([50.0126, 1.4989], 6); 
-var marker;
-var countries = {
-    'france': [50.0126, 1.4989, 10], 
-    // 'united-kingdom': [52.2800, 1.3200, 10] 
-};
-document.getElementById('france-row').addEventListener('click', function() {
-    zoomToCountry('france');
-});
+// Initialize the map
+var map = L.map('mapid').setView([50.0126, 1.4989], 13);
 
-// document.getElementById('uk-row').addEventListener('click', function() {
-//     zoomToCountry('united-kingdom');
-// });
-function zoomToCountry(country) {
-    var coords = countries[country];
-    map.setView([coords[0], coords[1]], coords[2]);
-    if (marker) {
-        map.removeLayer(marker);
-    }
-    marker = L.marker([coords[0], coords[1]]).addTo(map);
-    marker.bindPopup("<b>" + country.replace("-", " ").toUpperCase() + "</b><br><img src='Panaromic_image.jpg' width='200'><br><a href='pano.html'>Click for Interaction</a>").openPopup();
-
-    // Remove click event listener before zooming
-    marker.off('click');
-
-    // Add click event listener after zooming
-    marker.on('click', function () {
-        window.open('pano.html', '_blank');
-    });
-}
-
-
-
-
-//tile layers
+// Define tile layers
 var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 });
@@ -115,7 +82,7 @@ var satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/se
     attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
 });
 
-//   default layers
+// Add the satellite layer to the map by default
 map.addLayer(satelliteLayer);
 
 // Define base layers
@@ -126,58 +93,81 @@ var baseLayers = {
     "Esri Satellite": satelliteLayer
 };
 
+// Add layer control to the map
 L.control.layers(baseLayers).addTo(map);
 
+// Add the marker for France
 var franceMarker = L.marker([50.0126, 1.4989]).addTo(map);
-// var ukMarker = L.marker([52.2800, 1.3200]).addTo(map);
 
-var francePopupContent = "<b>France</b><br><img src='Panaromic_image.jpg' width='200'><br><a href='pano.html'>Click for Interaction</a>";
-// var ukPopupContent = "<b>United Kingdom</b><br><img src='uk_image.jpg' width='100'><br><a href='uk.html'>More Info</a>";
+// Get the popup content from the HTML
+var francePopupContent = document.getElementById('francePopupContent').innerHTML;
 
+// Create a popup with the content
 var francePopup = L.popup().setContent(francePopupContent);
-// var ukPopup = L.popup().setContent(ukPopupContent);
 
+// Add interaction for mouseover to show the popup
 franceMarker.on('mouseover', function () {
     francePopup.setLatLng(franceMarker.getLatLng()).openOn(map);
 });
 
-// ukMarker.on('mouseover', function () {
-//     ukPopup.setLatLng(ukMarker.getLatLng()).openOn(map);
-// });
-
+// Add interaction for click to open a new window
 franceMarker.on('click', function () {
     window.open('pano.html', '_blank');
 });
 
-// ukMarker.on('click', function () {
-//     window.open('uk.html', '_blank');
-// });
 
 
 
 
 
 
+                                                // Hide and Show
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const franceDescriptionSection = document.getElementById('france-description');
+    const homeSection = document.getElementById('home');
+    const mapContainerSection = document.getElementById('map-container');
 
+    franceDescriptionSection.style.display = 'none';
+    mapContainerSection.style.display = 'none';
+    homeSection.style.display = 'block';
 
+    document.getElementById('description-link').addEventListener('click', function(event) {
+        event.preventDefault();
 
-
-
-function showImageDescription(country) {
-    // Hide all image descriptions
-    var imageDescriptions = document.querySelectorAll('.image-description');
-    imageDescriptions.forEach(function(description) {
-      description.style.display = 'none';
+        franceDescriptionSection.style.display = 'block';
+        homeSection.style.display = 'none';
+        mapContainerSection.style.display = 'none';
     });
 
-    // Show the image description for the clicked country
-    var countryDescription = document.getElementById(country + '-description');
-    if (countryDescription) {
-      countryDescription.style.display = 'block';
-    }
-  }
+    document.getElementById('home-link').addEventListener('click', function(event) {
+        event.preventDefault();
+
+        franceDescriptionSection.style.display = 'none';
+        homeSection.style.display = 'block';
+        mapContainerSection.style.display = 'none';
+    });
+
+    document.getElementById('map-view-link').addEventListener('click', function(event) {
+        event.preventDefault();
+
+        franceDescriptionSection.style.display = 'none';
+        homeSection.style.display = 'none';
+        mapContainerSection.style.display = 'block';
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
 
 
 

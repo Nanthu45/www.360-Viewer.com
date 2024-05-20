@@ -7,42 +7,36 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  
 </head>
 <body>
 
   <div class="navbar-container fixed-top">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   
-        <a class="navbar-brand" href="#">
-          <img src="img/logo.png" alt="Logo Image" class="logo">
-        </a>
-        
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link"  style="padding-right: 50px;
-              padding-left: 50px;" id="home-link" href="#">    Home    <span class="sr-only">(current)</span></a>
-
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" style="padding-right: 40px;
-              padding-left: 40px;" id="about-link" href="#map-container">Map View</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" style="padding-right: 40px;
-              padding-left: 40px;" id="services-link" href="#">Contact Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" style="padding-right: 40px;
-              padding-left: 40px;" id="contact-link" href="#list">Description</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <a class="navbar-brand" href="#">
+        <img src="img/logo.png" alt="Logo Image" class="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" style="padding-right: 50px; padding-left: 50px;" id="home-link" href="#home">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="padding-right: 40px; padding-left: 40px;" id="map-view-link" href="#">Map View</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="padding-right: 40px; padding-left: 40px;" id="services-link" href="#">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="padding-right: 40px; padding-left: 40px;" id="description-link" href="#france-description">Description</a>
+        </li>
+        </ul>
+      </div>
+    </nav>
   </div>
   
 <div class="container mt-4" id="home">
@@ -113,7 +107,7 @@
 
 
 <!-- Map_Container -->
-<div id="map-container">
+<div id="map-container" >
   <div class="map-view-contents">
     <h3>Map View</h3>
     <div class="map-intro-paragraph">
@@ -125,11 +119,16 @@
   
   <div class="flex-container">
     <div id="mapid"></div>
+    <div id="francePopupContent" style="display: none;">
+        <b>France</b><br>
+        <img src="Panaromic_image.jpg" width="200"><br>
+        <a href="pano.html">Click for Interaction</a>
+    </div>
     <div id="list">
       <h4>List of Images</h4>
       <table>
         <tr id="france-row">
-          <td><a href="#france-description" onclick="showImageDescription('france')">France - Tower(1)</a></td>
+          <td>France - Tower(1)</td>
         </tr>
           <tr id="uk-row">
               <td>United Kingdom-Tower(1)</td>
@@ -145,23 +144,25 @@
     </tr>
       </table>
     </div>
+
+    
   </div>
 </div> 
 
 
 <!-- Image Description -->
-  <div id="france-description" class="image-description">
-    <h3>Image Description</h3>
-    <ul>
+<div id="france-description" class="image-description" style="display: none;">
+  <h3>Image Description</h3>
+  <ul>
       <li><strong>France Tower</strong></li>
-    </ul>
-    <div class="images_network">
+  </ul>
+  <div class="images_network">
       <img src="Panaromic_image.jpg" alt="Network Coverage Image">
-    </div>
-    <div class="image-caption">
-      <p style="text-align: center;"><strong>Flat image(Panoramic) of France Tower</strong></p>
-    </div>
-    <p>
+  </div>
+  <div class="image-caption">
+      <p style="text-align: center;"><strong>Flat image (Panoramic) of France Tower</strong></p>
+  </div>
+  <p>
       The communication tower situated in France, nestled at coordinates 50°00'45.2"N latitude and 1°29'56.2"E longitude, stands as a beacon of technological prowess and connectivity in the landscape. Rising against the horizon, it dominates the skyline with its intricate lattice of steel, a testament to human ingenuity in facilitating global communication.
 
       As the sun casts its golden hues upon the tower, its metallic facade gleams, reflecting the vibrant hues of dawn or dusk, depending on the time of observation. Silhouetted against the azure canvas of the sky, the tower embodies both strength and elegance, a modern marvel harmonizing with its natural surroundings.
@@ -171,9 +172,10 @@
       Surrounding the tower, the landscape unfolds, offering a tableau of diverse terrain and human activity. Rolling hills and verdant valleys stretch into the distance, punctuated by clusters of trees and quaint villages. In the distance, the spires of distant buildings hint at bustling urban centers, where the fruits of modern communication technology are embraced and utilized.
 
       Closer inspection reveals the intricate details of the tower's construction, each rivet and beam a testament to meticulous engineering and craftsmanship. Cables and wires crisscross the structure, connecting it to the vast network of telecommunications infrastructure that spans the globe.
-    </p>
-    
-  </div>
+  </p>
+</div>
+
+
   <!-- Footer -->
 
 
@@ -190,6 +192,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="leaflet.js"></script>
 </body>
 </html>
