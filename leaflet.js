@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                                                                         // Map_View
 // Initialize the map
-var map = L.map('mapid').setView([50.0126, 1.4989], 13);
+var map = L.map('mapid').setView([50.0126, 1.4989],1);
 
 // Define tile layers
 var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -110,10 +110,52 @@ franceMarker.on('mouseover', function () {
     francePopup.setLatLng(franceMarker.getLatLng()).openOn(map);
 });
 
-// Add interaction for click to open a new window
-franceMarker.on('click', function () {
-    window.open('pano.html', '_blank');
+
+
+function zoomToFrance() {
+    // Zoom to a specific level (e.g., 10)
+    map.setView([50.0126, 1.4989], 10);
+
+    // Get the popup content from the HTML
+    var francePopupContent = document.getElementById('francePopupContent').innerHTML;
+
+    // Create a popup with the content
+    var francePopup = L.popup().setContent(francePopupContent);
+
+    // Show the popup at the specified location
+    francePopup.setLatLng([50.0126, 1.4989]).openOn(map);
+}
+
+
+
+
+
+// Define the reload button control
+var reloadButton = L.Control.extend({
+    options: {
+        position: 'topright' // Position the button at the top right corner
+    },
+
+    onAdd: function (map) {
+        // Create a container div for the button
+        var container = L.DomUtil.create('div', 'reload-button');
+
+        // Add a button element
+        var button = L.DomUtil.create('button', '', container);
+        button.innerHTML = 'Reload Map';
+
+        // Add click event listener to reload the map and zoom to level 1
+        L.DomEvent.on(button, 'click', function () {
+            map.setView([0, 0], 1); // Zoom to level 1 at the center of the map
+        });
+
+        return container;
+    }
 });
+
+// Add the reload button control to the map
+map.addControl(new reloadButton());
+
 
 
 
