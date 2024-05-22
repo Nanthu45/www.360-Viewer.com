@@ -370,7 +370,7 @@
 
 #mapid {
   flex: 1 1 auto; /* Let the map container grow to occupy available space */
-  height: 45vh; /* Set initial height for the map */
+  height: 55vh; /* Set initial height for the map */
   margin-bottom: 20px; /* Add margin to separate map and list */
   padding: 3px;
 }
