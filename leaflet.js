@@ -62,10 +62,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
                                                                         // Map_View
-// Initialize the map
-var map = L.map('mapid').setView([50.0126, 1.4989],1);
 
-// Define tile layers
+var map = L.map('mapid').setView([50.0126, 1.4989],1.5);
+
 var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 });
@@ -82,10 +81,8 @@ var satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/se
     attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
 });
 
-// Add the satellite layer to the map by default
 map.addLayer(satelliteLayer);
 
-// Define base layers
 var baseLayers = {
     "OpenStreetMap": osmLayer,
     "Esri Street Map": esriLayer,
@@ -93,19 +90,14 @@ var baseLayers = {
     "Esri Satellite": satelliteLayer
 };
 
-// Add layer control to the map
 L.control.layers(baseLayers).addTo(map);
 
-// Add the marker for France
 var franceMarker = L.marker([50.0126, 1.4989]).addTo(map);
 
-// Get the popup content from the HTML
 var francePopupContent = document.getElementById('francePopupContent').innerHTML;
 
-// Create a popup with the content
 var francePopup = L.popup().setContent(francePopupContent);
 
-// Add interaction for mouseover to show the popup
 franceMarker.on('mouseover', function () {
     francePopup.setLatLng(franceMarker.getLatLng()).openOn(map);
 });
@@ -113,16 +105,12 @@ franceMarker.on('mouseover', function () {
 
 
 function zoomToFrance() {
-    // Zoom to a specific level (e.g., 10)
     map.setView([50.0126, 1.4989], 10);
 
-    // Get the popup content from the HTML
     var francePopupContent = document.getElementById('francePopupContent').innerHTML;
 
-    // Create a popup with the content
     var francePopup = L.popup().setContent(francePopupContent);
 
-    // Show the popup at the specified location
     francePopup.setLatLng([50.0126, 1.4989]).openOn(map);
 }
 
@@ -130,30 +118,23 @@ function zoomToFrance() {
 
 
 
-// Define the reload button control
 var reloadButton = L.Control.extend({
     options: {
-        position: 'topright' // Position the button at the top right corner
+        position: 'topright' 
     },
 
     onAdd: function (map) {
-        // Create a container div for the button
         var container = L.DomUtil.create('div', 'reload-button');
-
-        // Add a button element
         var button = L.DomUtil.create('button', '', container);
         button.innerHTML = 'Reload Map';
 
-        // Add click event listener to reload the map and zoom to level 1
         L.DomEvent.on(button, 'click', function () {
-            map.setView([0, 0], 1); // Zoom to level 1 at the center of the map
+            map.setView([0, 0], 1); 
         });
-
         return container;
     }
 });
 
-// Add the reload button control to the map
 map.addControl(new reloadButton());
 
 

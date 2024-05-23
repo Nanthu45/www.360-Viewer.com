@@ -5,31 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panoramic Image Viewer</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
     <link rel="stylesheet" href="style.css">
     
 </head>
 <body>
-    <div id="heading">
-        <h2>France-Tower(1)</h2>
-    <div id="panorama">
-        <div id="degreeScale">0</div>
-        <div id="controls">
-            <div class="ctrl" id="pan-up" text="Pan Up">&#9650;</div>
-            <div class="ctrl" id="pan-down" text="Pan Down">&#9660;</div>
-            <div class="ctrl" id="pan-left" text="Pan Left">&#9664;</div>
-            <div class="ctrl" id="pan-right" text="Pan Right">&#9654;</div>
-            <div class="ctrl" id="zoom-in" text="Zoom In">&plus;</div>
-            <div class="ctrl" id="zoom-out" text="Zoom Out">&minus;</div>
-            <div class="ctrl" id="fullscreen" text="Fullscreen">&#x2922;</div>
+        <div id="heading">
+            <h2>France-Tower(1)</h2>
+        <div id="panorama">
+            <div id="degreeScale">0</div>
+            <div id="controls">
+                <div class="ctrl" id="pan-up" text="Pan Up">&#9650;</div>
+                <div class="ctrl" id="pan-down" text="Pan Down">&#9660;</div>
+                <div class="ctrl" id="pan-left" text="Pan Left">&#9664;</div>
+                <div class="ctrl" id="pan-right" text="Pan Right">&#9654;</div>
+                <div class="ctrl" id="zoom-in" text="Zoom In">&plus;</div>
+                <div class="ctrl" id="zoom-out" text="Zoom Out">&minus;</div>
+                <div class="ctrl" id="fullscreen" text="Fullscreen">&#x2922;</div>
+            </div>
         </div>
+    
+    <div id="buttons-container">
+        <h3 style="color: rgb(0, 0, 0);">Click to Download Image Information</h3>
+        <button class="button" id="download-pdf">Download PDF</button>
     </div>
-</div>
 
-<div id="buttons-container">
-    <h3 style="color: white;">Click to Download Image Information</h3>
-    <button class="button" id="download-pdf">Download PDF</button>
-</div>
+    </div>
+
+    <footer >
+        <div class="copyright">
+          &copy; 2024 UNOM. All Rights Reserved. | 
+          <a style="color: white;"href="privacy-policy.html">Privacy Policy</a> | 
+          <a style="color: white;" href="terms-of-service.html">Terms of Service</a>
+        </div>
+      </footer>
+    
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
     <script src="panellum.js"></script>  
