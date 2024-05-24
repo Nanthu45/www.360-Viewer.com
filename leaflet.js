@@ -151,10 +151,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const franceDescriptionSection = document.getElementById('france-description');
     const homeSection = document.getElementById('home');
     const mapContainerSection = document.getElementById('map-container');
+    const contactSection = document.getElementById('contact');
 
     franceDescriptionSection.style.display = 'none';
     mapContainerSection.style.display = 'none';
     homeSection.style.display = 'block';
+    contactSection.style.display = 'none';
 
     document.getElementById('description-link').addEventListener('click', function(event) {
         event.preventDefault();
@@ -162,6 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
         franceDescriptionSection.style.display = 'block';
         homeSection.style.display = 'none';
         mapContainerSection.style.display = 'none';
+        contactSection.style.display = 'none';
     });
 
     document.getElementById('home-link').addEventListener('click', function(event) {
@@ -170,6 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
         franceDescriptionSection.style.display = 'none';
         homeSection.style.display = 'block';
         mapContainerSection.style.display = 'none';
+        contactSection.style.display = 'none';
     });
 
     document.getElementById('map-view-link').addEventListener('click', function(event) {
@@ -178,8 +182,21 @@ document.addEventListener('DOMContentLoaded', function() {
         franceDescriptionSection.style.display = 'none';
         homeSection.style.display = 'none';
         mapContainerSection.style.display = 'block';
+        contactSection.style.display = 'none';
+    });
+
+    document.getElementById('services-link').addEventListener('click', function(event) {
+        event.preventDefault();
+
+        franceDescriptionSection.style.display = 'none';
+        homeSection.style.display = 'none';
+        mapContainerSection.style.display = 'none';
+        contactSection.style.display = 'block';
     });
 });
+
+
+
 
 
 

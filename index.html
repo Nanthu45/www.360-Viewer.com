@@ -28,11 +28,12 @@
           <li class="nav-item">
             <a class="nav-link" style="padding-right: 40px; padding-left: 40px;" id="map-view-link" href="#">Map View</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" style="padding-right: 40px; padding-left: 40px;" id="services-link" href="#">Contact Us</a>
-          </li> -->
+          
           <li class="nav-item">
             <a class="nav-link" style="padding-right: 40px; padding-left: 40px;" id="description-link" href="#france-description">Description</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="padding-right: 40px; padding-left: 40px;" id="services-link" href="#">Contact Us</a>
         </li>
         </ul>
       </div>
@@ -175,18 +176,18 @@
 
 
 <!-- Image Description -->
-<div id="france-description" class="image-description" style="display: none;">
+<div id="france-description" >
   <h3>Image Description</h3>
   <ul>
       <li><strong>France Tower</strong></li>
   </ul>
-  <div class="images_network">
+  <div class="images_des">
       <img src="Panaromic_image.jpg" alt="Network Coverage Image">
   </div>
   <div class="image-caption">
       <p style="text-align: center;"><strong>Flat image (Panoramic) of France Tower</strong></p>
   </div>
-  <p>
+  <p id="content-description" >
       The communication tower situated in France, nestled at coordinates 50°00'45.2"N latitude and 1°29'56.2"E longitude, stands as a beacon of technological prowess and connectivity in the landscape. Rising against the horizon, it dominates the skyline with its intricate lattice of steel, a testament to human ingenuity in facilitating global communication.
 
       As the sun casts its golden hues upon the tower, its metallic facade gleams, reflecting the vibrant hues of dawn or dusk, depending on the time of observation. Silhouetted against the azure canvas of the sky, the tower embodies both strength and elegance, a modern marvel harmonizing with its natural surroundings.
@@ -199,6 +200,40 @@
   </p>
 </div>
 
+
+<!-- Contact -->
+<div id="contact">
+<div class="contact-container">
+  <h1>Contact Us</h1>
+  <p>Any questions or remarks?Just contact us fill through your information, 
+    we will reach you immediately!</p>
+  <form class="contact-form">
+      <input type="email" id="email" name="email" placeholder="Enter a valid email address" required>
+      <input type="text" id="name" name="name" placeholder="Enter your Name" required>
+      <button type="submit" id="sub">Submit</button>
+  </form>
+</div>
+
+
+<div class="info-section">
+
+  <div class="info-box">
+      <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+      <h3>Our Office Location</h3>
+      <p>University of Madras<br>
+         Guindy Campus
+      9/36, Gandhi Mandapam Rd,
+       Anna University, 
+       Kotturpuram, 
+       Chennai, 
+       Tamil Nadu 600085</p>
+  </div>
+</div>
+
+<div class="map-container">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.381990426132!2d80.23746627454716!3d13.011329314007085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526799aab8a721%3A0x7b7ea3a496e23935!2sUniversity%20of%20Madras%2C%20Guindy%20Campus!5e0!3m2!1sen!2sin!4v1716463866358!5m2!1sen!2sin"  width="1100px" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+</div>
 
   <!-- Footer -->
 
