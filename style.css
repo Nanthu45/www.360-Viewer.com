@@ -562,17 +562,18 @@ tr:hover {
   text-align: center;
   background-color: #fff;
   padding-top: 120px;
+  text-align: justify;
 }
 
 .contact-container h1 {
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .contact-container p {
   margin-bottom: 30px;
   color: #555;
-  text-align: justify;
-  padding: 10px;
+  text-align: center;
 }
 
 .contact-form {
@@ -590,12 +591,19 @@ tr:hover {
 
   .contact-form input, .contact-form button {
       width: 100%;
-      max-width: 300px; /* Optional, to prevent too wide inputs */
-      margin-bottom: 10px; /* Optional, to add space between elements */
+      max-width: 300px; 
+      margin-bottom: 10px; 
   }
 
   .contact-form button {
       max-width: 100px;
+  }
+
+  .contact-container p {
+    margin-bottom: 30px;
+    color: #555;
+    text-align: justify;
+    padding: 10px;
   }
 }
 
